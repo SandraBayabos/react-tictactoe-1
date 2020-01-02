@@ -23,11 +23,22 @@ function App() {
     console.log(currentPlayer);
   };
 
+  const checkWin = (winningCombos, boardState) => {
+    for (let i = 0; i < winningCombos.length; i++) {
+      let winner = winningCombos[i].map(index => boardState[index]).join("");
+
+      if (winner === "XXX" || winner === "OOO") {
+        return true;
+      }
+    }
+  };
+
   return (
     <div className="App" style={{ height: "100vh", width: "100vw" }}>
       <h1 className="title">TIC TAC TOE</h1>
       <Board boardState={board} handleClick={handleClick} />
-      <button>Play Again</button>
+      <div>Player's Turn: {currentPlayer}</div>
+      <button className="reset-button">Play Again</button>
     </div>
   );
 }
