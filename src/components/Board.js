@@ -17,9 +17,12 @@ const Board = ({ boardState, handleClick }) => {
       <StyledBoard>
         {boardState.map((value, index) => {
           return (
-            <Box handleClick={handleClick} key={index} id={index}>
-              {value}
-            </Box>
+            <Box
+              handleClick={handleClick}
+              key={index}
+              id={index}
+              symbol={value}
+            />
           );
         })}
       </StyledBoard>

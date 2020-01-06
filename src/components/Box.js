@@ -8,8 +8,12 @@ const StyledBox = styled.div`
   border: 1px solid black;
 `;
 
-const Box = ({ cell, id, handleClick }) => {
-  return <StyledBox key={cell} id={id} onClick={handleClick}></StyledBox>;
+const Box = ({ cell, id, symbol, handleClick }) => {
+  return (
+    <StyledBox key={cell} id={id} onClick={handleClick}>
+      {symbol}
+    </StyledBox>
+  );
 };
 
 export default Box;

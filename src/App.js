@@ -21,6 +21,10 @@ function App() {
     console.log(e.target.id);
     setCurrentPlayer(currentPlayer === "X" ? "O" : "X");
     console.log(currentPlayer);
+    const boardCopy = [...board];
+    boardCopy[e.target.id] = currentPlayer;
+    setBoard(boardCopy);
+    console.log(boardCopy[e.target.id]);
   };
 
   const checkWin = (winningCombos, boardState) => {
